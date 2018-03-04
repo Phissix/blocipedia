@@ -8,22 +8,24 @@ source 'https://rubygems.org'
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
  gem 'rails', '~> 5.1.2'
 
+ # #1
  group :production do
    # Use pg as the production database for Active Record
-   gem 'pg'
+   gem 'pg', '~> 0.18'
    gem 'rails_12factor'
  end
 
+ # #2
  group :development do
    # Use sqlite3 as the development database for Active Record
    gem 'sqlite3'
-   gem 'web-console', '~> 2.0'
  end
 
  group :development, :test do
-   gem 'rspec-rails', '~> 3.0'
-   gem 'rails-controller-testing'
- end
+  gem 'rspec-rails', '~> 3.0'
+  gem 'rails-controller-testing'
+  gem 'shoulda'
+end
 
  # Use Puma as the app server
  gem 'puma', '~> 3.0'
@@ -40,6 +42,12 @@ source 'https://rubygems.org'
  gem 'jbuilder', '~> 2.5'
 
  gem 'thor', '0.19.1'
+
+ gem 'bootstrap-sass'
+
+ # Used for encrypting passwords
+ gem 'bcrypt'
+
 
  group :development do
    gem 'listen', '~> 3.0.5'
