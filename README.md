@@ -1,3 +1,4 @@
-## Blocipedia is a CRUD application built with Ruby on Rails that allows users to create public and private markdown-based wikis.
+## Blocipedia
+Blocipedia is a CRUD application built with Ruby on Rails that allows users to create public and private markdown-based wikis.
 
- Made at [Bloc](http://bloc.io).
+This project was made for [Bloc's Web Development Program](http://bloc.io).
