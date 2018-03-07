@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Default URL for mailer/Devise
-  config.action_mailer.default_url_options = { host: 'pacific-beyond-52982.herokuapp' }
+  config.action_mailer.default_url_options = { host: 'pacific-beyond-52982.herokuapp.com' }
 end
