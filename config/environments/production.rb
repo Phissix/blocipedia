@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Default URL for mailer/Devise
-  config.action_mailer.default_url_options = { host: 'blocipedia.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'pacific-crag-74003.herokuapp.com' }
 end
