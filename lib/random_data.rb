@@ -2,11 +2,15 @@ module RandomData
   def self.random_username
      username = random_word.downcase
      "#{username}"
-   end
+  end
 
-   def self.random_email
+  def self.random_email
      "#{random_word}@#{random_word}.#{random_word}"
-   end
+  end
+
+  def self.random_password
+    "#{random_word}#{random_word}"
+  end
 
   def self.random_paragraph
     sentences = []

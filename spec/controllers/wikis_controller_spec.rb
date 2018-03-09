@@ -18,12 +18,12 @@ RSpec.describe WikisController, type: :controller do
     end
   end
 
-  # describe "GET #show" do
-  #   it "returns http success" do
-  #     get :show
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "GET #show" do
+     it "returns http success" do
+       get :show, params: {id: my_wiki.id}
+       expect(response).to have_http_status(:success)
+     end
+  end
 
   describe "GET #new" do
     it "returns http success" do
