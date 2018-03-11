@@ -1,4 +1,6 @@
 class WikisController < ApplicationController
+  # before_action :authenticate_user!
+
   def index
     @wikis = Wiki.all
   end
@@ -55,5 +57,10 @@ class WikisController < ApplicationController
       flash.now[:alert] = "There was an error deleting the wiki."
       render :show
     end
+  end
+
+  private
+  def wiki_params
+    params.require(:wiki).permit(:title, :body, :private)
   end
 end
