@@ -28,4 +28,18 @@ class User < ApplicationRecord
     end
   end
 
+  # soft deletion
+  # indicate the user requested a delete & timestamp it
+  def soft_delete
+    update_attribute(:deleted_at, Time.current)
+  end
+  #make sure user account is active
+  def active_for_authentication?
+    super && !deleted_at
+  end
+  #custom message for a deleted account
+  def inactive_message
+  	!deleted_at ? super : :deleted_account
+  end
+
 end

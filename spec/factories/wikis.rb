@@ -1,5 +1,3 @@
-#for checkpoint5
-=begin
 FactoryGirl.define do
   factory :wiki do
     title RandomData.random_sentence
@@ -7,4 +5,3 @@ FactoryGirl.define do
     user
   end
 end
-=end
