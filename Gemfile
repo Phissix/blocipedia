@@ -71,3 +71,9 @@ gem 'devise'
 
 # Store Sendgrid and Devise credentials
 gem 'figaro', '1.0'
+
+# Seeding data
+gem 'faker'
+
+#upgrading user accounts from standard to premium
+gem 'stripe'
