@@ -77,3 +77,6 @@ gem 'faker'
 
 #upgrading user accounts from standard to premium
 gem 'stripe'
+
+# Markdown parser
+gem 'redcarpet'
