@@ -1,16 +1,26 @@
 class WikisController < ApplicationController
   before_action :authenticate_user!
   def index
-    if current_user.standard?
-      @wikis = Wiki.where(private: false)
-    else
-      @wikis = Wiki.all
-    end
+    @wikis = WikiPolicy::Scope.new(current_user, Wiki).resolve
   end
 
   def show
     @wiki = Wiki.find(params[:id])
+    if @wiki.private?
+      if @wiki.user == current_user
+        wiki_path
+      elsif current_user.standard?
+        flash[:alert] = "You must be a premium user to view private wikis."
+        redirect_to new_charge_path
+      elsif @wiki.users.exclude?(current_user)
+        flash[:alert] = "You must be a collaborator to view that wiki."
+        redirect_to wikis_path
+      end
+    else
+      wiki_path
+    end
   end
+
 
 
   def new
@@ -32,6 +42,7 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @users = User.all
   end
 
   def update
